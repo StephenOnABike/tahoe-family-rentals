@@ -474,7 +474,56 @@
     @media (max-width: 680px) {
       .map-link { white-space: normal; }
       .tabs { border-radius: 18px; }
+      .tabs button { font-size: 0.92rem; padding: 0.5rem 0.45rem; }
     }
+
+    .book-kicker {
+      margin: 0 0 0.7rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--jacket);
+    }
+    .book-checks {
+      list-style: none;
+      margin: 0 0 1.35rem;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .book-item {
+      display: grid;
+      grid-template-columns: 1.35rem 1fr;
+      column-gap: 0.8rem;
+      align-items: start;
+      margin: 0;
+      padding: 1rem 1.1rem 1.05rem;
+      background: var(--frost-heavy);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .book-item--top { border-top: 5px solid var(--gold); }
+    .book-item input[type="checkbox"] {
+      width: 1.25rem;
+      height: 1.25rem;
+      margin: 0.35rem 0 0;
+      accent-color: var(--pine);
+      cursor: pointer;
+    }
+    .book-item h3 {
+      margin: 0 0 0.25rem;
+      font-family: Palatino, "Palatino Linotype", "Iowan Old Style", Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+    .book-item h3 label { cursor: pointer; }
+    .book-item.is-done h3 { color: var(--ink-soft); }
+    .book-meta { margin: 0 0 0.4rem; color: var(--ink-soft); font-size: 0.95rem; }
+    .book-why { margin: 0 0 0.55rem; }
+
   </style>
 </head>
 <body>
@@ -589,9 +638,10 @@
       <p class="hero-sub">Six round-trip options for Mom &amp; Dad, Sunday to Sunday, with no more than one stop each way.</p>
     </header>
 
-    <nav id="tabs" class="tabs" role="tablist" aria-label="Flights and itinerary">
+    <nav id="tabs" class="tabs" role="tablist" aria-label="Flights, itinerary, and bookings">
       <button type="button" role="tab" id="tab-flights" aria-controls="flights" aria-selected="true" tabindex="0">Flights</button>
       <button type="button" role="tab" id="tab-itinerary" aria-controls="itinerary" aria-selected="false" tabindex="-1">Itinerary</button>
+      <button type="button" role="tab" id="tab-booknow" aria-controls="booknow" aria-selected="false" tabindex="-1">Book now</button>
     </nav>
 
     <div id="flights" class="tab-panel" role="tabpanel" aria-labelledby="tab-flights">
@@ -1530,28 +1580,159 @@
         <p>Found while checking official park, church, cruise, ski, and visitor pages on Sunday, November 22, 2026. Lodging is assumed to be a South Lake Tahoe rental. Times and prices can change. Drive times are without stops and can change with traffic, snow, and chain control.</p>
       </footer>
     </div>
+
+<div id="booknow" class="tab-panel" role="tabpanel" aria-labelledby="tab-booknow" hidden>
+      <section class="panel intro" aria-labelledby="booknow-overview">
+        <h2 id="booknow-overview" style="color:var(--ink);text-shadow:none;margin-top:0;font-size:1.25rem;">Book these next</h2>
+        <p>A short checklist of what to arrange soon, beyond family flights. Items are in priority order. Check them off as you go — the list is saved in this browser only. Nothing here is booked yet.</p>
+        <p class="note">Official pages can change. Confirm dates, hours, and policies there before you pay. This page does not list phone numbers or a lodging address.</p>
+      </section>
+
+      <p class="book-kicker">Top 3 — book first</p>
+      <ul class="book-checks">
+        <li class="book-item book-item--top">
+          <input type="checkbox" id="book-ski" data-book="ski">
+          <div>
+            <h3><label for="book-ski">1. Ski lessons, rentals, and lift tickets</label></h3>
+            <p class="book-meta"><strong>When:</strong> Sierra-at-Tahoe Mon Dec 21; Heavenly Tue Dec 22, Wed Dec 23, and Sun Dec 27; optional Heavenly Sat Dec 26 (an alternative to the Truckee outing).<br>
+            <strong>Who:</strong> Ayaan and Laila (first-timers) for lessons, rentals, and tickets; Stephen for his lift tickets, and to stay with them at Sierra.</p>
+            <p class="book-why"><strong>Why book early:</strong> Sierra recommends booking lessons at least 48 hours ahead. Holiday parking reservations are required at Sierra, and a lesson does not guarantee a parking spot. Buy Heavenly tickets — and any lessons or rentals — ahead for the holiday dates, including Saturday if they ski instead of going to Truckee.</p>
+            <p class="link-stack">
+              <a href="https://sierraattahoe.com/lessons/wild-mountain-lessons/" target="_blank" rel="noopener noreferrer">Sierra Wild Mountain Lessons</a>
+              <a href="https://sierraattahoe.com/lift-tickets/" target="_blank" rel="noopener noreferrer">Sierra lift tickets</a>
+              <a href="https://sierraattahoe.com/parking/" target="_blank" rel="noopener noreferrer">Sierra parking reservations</a>
+              <a href="https://www.skiheavenly.com/plan-your-trip/ski-and-ride-lessons.aspx" target="_blank" rel="noopener noreferrer">Heavenly lessons</a>
+              <a href="https://www.skiheavenly.com/" target="_blank" rel="noopener noreferrer">Heavenly tickets</a>
+            </p>
+          </div>
+        </li>
+        <li class="book-item book-item--top">
+          <input type="checkbox" id="book-cruise" data-book="cruise">
+          <div>
+            <h3><label for="book-cruise">2. Spirit of Tahoe Christmas Eve cruise</label></h3>
+            <p class="book-meta"><strong>When:</strong> Thu Dec 24, Lake Tahoe Cruises on the Spirit of Tahoe.<br>
+            <strong>Who:</strong> whoever wants to go.</p>
+            <p class="book-why"><strong>Why book early:</strong> Confirm a Dec 24 sailing before you reserve. The official Winter 2026 schedule currently lists the Emerald Bay day cruise as Saturday only (1:00–3:00 PM). The sunset cruise is listed separately. Check availability for Christmas Eve on the official booking page — the itinerary had planned a morning cruise, which may not be offered that Thursday.</p>
+            <p class="link-stack">
+              <a href="https://tahoecruises.com/daily-cruises-booking/" target="_blank" rel="noopener noreferrer">Spirit of Tahoe booking</a>
+              <a href="https://tahoecruises.com/cruises-on-the-spirit-of-tahoe/" target="_blank" rel="noopener noreferrer">Cruise details</a>
+            </p>
+          </div>
+        </li>
+        <li class="book-item book-item--top">
+          <input type="checkbox" id="book-riva" data-book="riva">
+          <div>
+            <h3><label for="book-riva">3. Riva Grill Christmas Eve dinner</label></h3>
+            <p class="book-meta"><strong>When:</strong> Thu Dec 24, early dinner.<br>
+            <strong>Who:</strong> the group of 9.</p>
+            <p class="book-why"><strong>Why book early:</strong> A holiday dinner for 9 should be reserved soon. Ask about Christmas Eve hours on the official site before you book.</p>
+            <p class="link-stack">
+              <a href="https://www.rivagrill.com/" target="_blank" rel="noopener noreferrer">Riva Grill</a>
+            </p>
+          </div>
+        </li>
+      </ul>
+
+      <p class="book-kicker">Next</p>
+      <ul class="book-checks">
+        <li class="book-item">
+          <input type="checkbox" id="book-tubing" data-book="tubing">
+          <div>
+            <h3><label for="book-tubing">Adventure Mountain tubing</label></h3>
+            <p class="book-meta"><strong>When:</strong> Wed Dec 23.<br>
+            <strong>Who:</strong> whoever wants a more active day.</p>
+            <p class="book-why"><strong>Why check now:</strong> The official FAQ says they operate first come and do not take reservations. You cannot book a session in advance; plan an early arrival on a holiday week and confirm hours on their site.</p>
+            <p class="link-stack">
+              <a href="https://www.adventuremountaintahoe.com/plan/faqs" target="_blank" rel="noopener noreferrer">Adventure Mountain FAQ (reservations)</a>
+              <a href="https://www.adventuremountaintahoe.com/plan/pricing" target="_blank" rel="noopener noreferrer">Adventure Mountain pricing</a>
+            </p>
+          </div>
+        </li>
+        <li class="book-item">
+          <input type="checkbox" id="book-carson" data-book="carson">
+          <div>
+            <h3><label for="book-carson">Carson Hot Springs</label></h3>
+            <p class="book-meta"><strong>When:</strong> Fri Dec 25, optional afternoon soak.<br>
+            <strong>Who:</strong> whoever wants to go.</p>
+            <p class="book-why"><strong>Why check now:</strong> The official pool page says no reservations are taken for indoor private pools (first come, walk-ins welcome). There is no reservation to make; confirm Christmas Day hours before you go.</p>
+            <p class="link-stack">
+              <a href="https://carsonhotsprings.com/pool/" target="_blank" rel="noopener noreferrer">Carson Hot Springs pool &amp; policy</a>
+            </p>
+          </div>
+        </li>
+        <li class="book-item">
+          <input type="checkbox" id="book-cars" data-book="cars">
+          <div>
+            <h3><label for="book-cars">Rental cars with room for 9</label></h3>
+            <p class="book-meta"><strong>When:</strong> trip week, Sun Dec 20–Sun Dec 27 (Reno airport pickup for anyone flying in).<br>
+            <strong>Who:</strong> whoever needs a rental, including a vehicle with room for 9.</p>
+            <p class="book-why"><strong>Why book early:</strong> Holiday week, and larger vehicles can be scarce. Start from the official Reno-Tahoe Airport rental-car page, which lists the on-site agencies; confirm vehicle size with the company you choose.</p>
+            <p class="link-stack">
+              <a href="https://www.renoairport.com/parking-transportation/rental-cars/" target="_blank" rel="noopener noreferrer">Reno Airport rental cars</a>
+            </p>
+          </div>
+        </li>
+        <li class="book-item">
+          <input type="checkbox" id="book-xc" data-book="xc">
+          <div>
+            <h3><label for="book-xc">Camp Richardson cross-country skiing</label></h3>
+            <p class="book-meta"><strong>When:</strong> Wed Dec 23, optional instead of tubing.<br>
+            <strong>Who:</strong> Lindsay and Ani, if they want to ski XC (Jackie does not snowshoe or ski XC).</p>
+            <p class="book-why"><strong>Why check now:</strong> Current 2026/27 rental, trail-pass, and lesson prices were not confirmed on the resort site. Contact the resort through its official page before you go.</p>
+            <p class="link-stack">
+              <a href="https://camprichardsonresort.com/" target="_blank" rel="noopener noreferrer">Camp Richardson Resort</a>
+              <a href="https://camprichardsonresort.com/contact-us/" target="_blank" rel="noopener noreferrer">Camp Richardson contact</a>
+            </p>
+          </div>
+        </li>
+        <li class="book-item">
+          <input type="checkbox" id="book-church" data-book="church">
+          <div>
+            <h3><label for="book-church">Christmas Eve church service times</label></h3>
+            <p class="book-meta"><strong>When:</strong> Thu Dec 24, evening Episcopal service.<br>
+            <strong>Who:</strong> whoever wants to go.</p>
+            <p class="book-why"><strong>Why confirm now:</strong> 2026 Christmas Eve times were not posted when last checked. Confirm the earliest family-friendly service on the church sites. St. John in the Wilderness (Glenbrook) is the closer year-round parish; St. Patrick’s in Incline Village is the farther option.</p>
+            <p class="link-stack">
+              <a href="https://stjohnsnv.org/" target="_blank" rel="noopener noreferrer">St. John in the Wilderness</a>
+              <a href="https://www.tahoeepiscopal.org/" target="_blank" rel="noopener noreferrer">St. Patrick’s, Incline Village</a>
+            </p>
+          </div>
+        </li>
+      </ul>
+
+      <footer class="foot">
+        <p>Official booking and policy pages checked Friday, November 27, 2026. Confirm details on those pages before you pay. This checklist saves in this browser only.</p>
+      </footer>
+    </div>
+
   </div>
 
   <script>
     (function () {
       var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
-      var flights = document.getElementById("flights");
-      var itinerary = document.getElementById("itinerary");
+      var panels = {
+        flights: document.getElementById("flights"),
+        itinerary: document.getElementById("itinerary"),
+        booknow: document.getElementById("booknow")
+      };
+      var aliases = { activities: "itinerary" };
+
+      function resolve(id) {
+        id = aliases[id] || id;
+        return panels[id] ? id : "flights";
+      }
 
       function show(id, updateHash) {
-        var panelId = (id === "itinerary" || id === "activities") ? "itinerary" : "flights";
+        var panelId = resolve(id);
         tabs.forEach(function (tab) {
           var on = tab.getAttribute("aria-controls") === panelId;
           tab.setAttribute("aria-selected", on ? "true" : "false");
           tab.tabIndex = on ? 0 : -1;
         });
-        if (panelId === "itinerary") {
-          itinerary.removeAttribute("hidden");
-          flights.setAttribute("hidden", "");
-        } else {
-          flights.removeAttribute("hidden");
-          itinerary.setAttribute("hidden", "");
-        }
+        Object.keys(panels).forEach(function (key) {
+          if (key === panelId) panels[key].removeAttribute("hidden");
+          else panels[key].setAttribute("hidden", "");
+        });
         if (updateHash !== false) {
           history.replaceState(null, "", "#" + panelId);
         }
@@ -1567,6 +1748,11 @@
           requestAnimationFrame(toTop);
           return;
         }
+        if (raw === "booknow") {
+          show("booknow", false);
+          requestAnimationFrame(toTop);
+          return;
+        }
         if (raw === "flights" || raw === "") {
           show("flights", false);
           if (raw === "flights") requestAnimationFrame(toTop);
@@ -1577,18 +1763,41 @@
           return;
         }
         var target = document.getElementById(raw);
-        if (target && flights.contains(target)) {
-          show("flights", false);
-          requestAnimationFrame(function () { target.scrollIntoView(); });
-          return;
-        }
-        if (target && itinerary.contains(target)) {
-          show("itinerary", false);
-          requestAnimationFrame(function () { target.scrollIntoView(); });
-          return;
+        var keys = Object.keys(panels);
+        for (var i = 0; i < keys.length; i++) {
+          var key = keys[i];
+          if (target && panels[key].contains(target)) {
+            show(key, false);
+            requestAnimationFrame(function () { target.scrollIntoView(); });
+            return;
+          }
         }
         show("flights", false);
       }
+
+      var BOOK_KEY = "tahoe-family-booknow-v1";
+      function paintChecks() {
+        var saved = {};
+        try { saved = JSON.parse(localStorage.getItem(BOOK_KEY) || "{}"); } catch (err) {}
+        document.querySelectorAll("#booknow input[data-book]").forEach(function (el) {
+          el.checked = !!saved[el.getAttribute("data-book")];
+          var item = el.closest(".book-item");
+          if (item) item.classList.toggle("is-done", el.checked);
+        });
+      }
+      function saveChecks() {
+        var saved = {};
+        document.querySelectorAll("#booknow input[data-book]").forEach(function (el) {
+          saved[el.getAttribute("data-book")] = el.checked;
+          var item = el.closest(".book-item");
+          if (item) item.classList.toggle("is-done", el.checked);
+        });
+        try { localStorage.setItem(BOOK_KEY, JSON.stringify(saved)); } catch (err) {}
+      }
+      document.querySelectorAll("#booknow input[data-book]").forEach(function (el) {
+        el.addEventListener("change", saveChecks);
+      });
+      paintChecks();
 
       tabs.forEach(function (tab, i) {
         tab.addEventListener("click", function () {
