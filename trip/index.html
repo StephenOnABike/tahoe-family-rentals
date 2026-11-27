@@ -365,6 +365,38 @@
       margin: 0 0 1rem;
     }
     .party-note strong { color: #7a4a0c; }
+    details.short-version {
+      background: var(--frost);
+      backdrop-filter: blur(18px) saturate(1.35);
+      -webkit-backdrop-filter: blur(18px) saturate(1.35);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 0.85rem 1.15rem 1rem;
+      margin-bottom: 1.15rem;
+      color: var(--ink);
+      text-shadow: none;
+    }
+    details.short-version > summary {
+      cursor: pointer;
+      font-family: Palatino, "Palatino Linotype", "Iowan Old Style", Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--ink);
+      list-style: none;
+    }
+    details.short-version > summary::-webkit-details-marker { display: none; }
+    details.short-version > summary::marker { content: ""; }
+    details.short-version > summary::before {
+      content: "▸ ";
+      color: var(--lake);
+    }
+    details.short-version[open] > summary::before { content: "▾ "; }
+    details.short-version .short-body { margin-top: 0.85rem; }
+    details.short-version .short-body p { margin: 0 0 0.75rem; }
+    details.short-version .short-body p:last-child { margin-bottom: 0; }
+    details.short-version .pick { margin-top: 0; }
+    details.short-version .pick ul { margin: 0.5rem 0 0; padding-left: 1.15rem; }
 
     .pc {
       display: grid;
@@ -689,29 +721,29 @@
     </nav>
 
     <div id="flights" class="tab-panel" role="tabpanel" aria-labelledby="tab-flights">
-    <aside class="panel delta-note" aria-label="About Delta nonstop flights">
-      <p><strong>Yes, Delta flies ATL–RNO nonstop</strong> (DL391), but it leaves Atlanta at 7:59 PM and lands in Reno at 9:58 PM (about 1 AM Atlanta time), which is rough with kids. The fare pairs it with a connecting return through Salt Lake City, and it's pricey: <strong>$1,317 per person</strong> at the 1-adult price, or $1,316.67 per person for 6 ($7,900), vs. $745–$788 for the 1-adult Southwest picks and $788–$818 for 6 in one booking (prices checked Nov 27, about 1:05–1:25pm ET).</p>
-    </aside>
-    <section class="panel intro" aria-labelledby="overview">
-      <h2 id="overview" style="color:var(--ink);text-shadow:none;margin-top:0;font-size:1.25rem;">The short version</h2>
-      <div class="price-banner">
-        <strong>Prices are per person, round trip, in economy. Checked bags are not included.</strong>
+    <div class="party-note">
+      <strong>Party of 6.</strong> Prices for 6 are for 6 adults. A child fare may differ, so trust the total Southwest shows at checkout. On Southwest, “N seats left” means seats left at the lowest price, not empty seats on the plane — booking all 6 together can cost more. 1-adult prices are also shown. ATL–RNO, Sunday Dec 20 out and Sunday Dec 27 back, economy, bags not included. Checked 1:05–1:25pm ET Friday, November 27, 2026.
+    </div>
+
+    <details class="short-version" id="overview">
+      <summary>The short version</summary>
+      <div class="short-body">
+        <div class="pick">
+          <strong>Top pick: Option 0</strong> — Southwest, Nashville out and Denver back. 1-adult Choice $745, and the shortest return (1h 10m layover). Often delayed 30+ min. Booked as two one-ways.
+          <ul>
+            <li>For all 6 in one booking, Options 2 and 3 are the cheapest Choice options at $788 ($4,728). Option 0 is $799 ($4,794) because the outbound has only 2 seats at the lowest price and the Denver return has only 4. Option 1 is $818 ($4,908).</li>
+            <li><strong>Split estimate (not tested):</strong> 2 on the outbound at $364 Choice plus 4 at $394, and 4 on the return at $381 plus 2 at $405, about $4,638 total ($773 average).</li>
+          </ul>
+        </div>
+        <p>Southwest <strong>Basic</strong> is cheaper, but seat selection costs extra. <strong>Choice</strong> includes a seat pick, so you can sit together. 1-adult: Options 1–3 are $788 Choice / $688 Basic; Option 0 is $745 / $645.</p>
+        <p>Delta flies ATL–RNO nonstop (DL391) but leaves at 7:59 PM and lands at 9:58 PM (about 1 AM Atlanta time), with a connecting Salt Lake City return. 1-adult $1,317, or $1,316.67 for 6 ($7,900). See Option 5.</p>
       </div>
-      <div class="party-note">
-        <strong>Party of 6.</strong> Six people are flying these flights, and they may need to split across flights. Some fares only hold a few seats at the low 1-adult price, so a booking for all 6 can cost more. Each option and mix-and-match flight has a <strong>Seats</strong> line. The 1-adult prices are still shown. Checked around 1:05–1:25pm ET on Friday, November 27, 2026.
-      </div>
-      <p>These are round-trip flights from Atlanta (ATL) to Reno (RNO) on <strong>Sunday, December 20</strong> out and <strong>Sunday, December 27</strong> back.</p>
-      <p class="note">Southwest <strong>Basic</strong> is cheaper, but seat selection costs extra. <strong>Choice</strong> includes seat selection, so you can sit together. At the 1-adult price, Options 1, 2, and 3 are $788 Choice / $688 Basic, and Option 0 is $43 less ($745 Choice / $645 Basic). For all 6 in one booking, Options 2 and 3 stay $788 Choice ($4,728 for 6) and are the cheapest Southwest Choice options. Option 0 rises to $799 ($4,794 for 6) because the outbound only holds 2 seats at the low fare and the Denver return only holds 4. Option 1 is $818 ($4,908 for 6).</p>
-      <div class="pick">
-        <strong>Top recommendation: Option 0 — Southwest via Nashville out and Denver back, $745 per person on Choice at the 1-adult price, and the shortest return.</strong>
-        Same outbound as Option 1, landing in Reno at 2:30 PM, with a shorter 1h 10m return layover. Booked as two one-ways. Choice includes a standard seat pick, so they can sit together. Google notes the return is often delayed 30+ min. For all 6 in one booking, Option 0 is $799 Choice ($4,794 for 6), because the low fares only hold 2 seats out and 4 back. Options 2 and 3 are the cheapest Choice options for 6 in one booking, at $788 per person ($4,728 for 6). An untested estimate to split Option 0 and keep some of the lower 1-adult fares comes to about $4,638 total, or $773 average.
-      </div>
-    </section>
+    </details>
 
     <h2>Quick comparison</h2>
     <div class="panel table-wrap" style="padding:0.9rem 0.6rem 0.4rem;">
       <table>
-        <caption>The first amount is the 1-adult per-person round-trip fare. The line under it is the party-of-6 price if all 6 are in one booking. Seat selection is included except on Southwest Basic. Times are local.</caption>
+        <caption>1-adult round-trip fare, then the price if all 6 book together. Choice includes seats; Basic does not. Times are local.</caption>
         <thead>
           <tr>
             <th>Option</th>
@@ -726,7 +758,7 @@
           <tr class="best">
             <td><a href="#option-0">0. Nashville out, Denver back</a></td>
             <td>Southwest</td>
-            <td class="price">$745 <span class="muted">per person · Choice · 1 adult</span><br><span class="muted">For 6: $799 · $4,794 total · 2 left out, 4 left back</span></td>
+            <td class="price">$745 <span class="muted">per person · Choice · 1 adult</span><br><span class="muted">For 6: $799 · $4,794 total · only 2 at the lowest price out, 4 back</span></td>
             <td>10:00 AM → 2:30 PM</td>
             <td>11:45 AM → 8:55 PM</td>
             <td>1 stop each way (BNA out, DEN back)</td>
@@ -734,7 +766,7 @@
           <tr>
             <td><a href="#option-1">1. Via Nashville</a></td>
             <td>Southwest</td>
-            <td class="price">$788 <span class="muted">per person · Choice · 1 adult</span><br><span class="muted">For 6: $818 · $4,908 total · 2 left on the outbound</span></td>
+            <td class="price">$788 <span class="muted">per person · Choice · 1 adult</span><br><span class="muted">For 6: $818 · $4,908 total · only 2 at the lowest price on the outbound</span></td>
             <td>10:00 AM → 2:30 PM</td>
             <td>9:05 AM → 7:45 PM</td>
             <td>1 stop each way (BNA)</td>
@@ -742,7 +774,7 @@
           <tr>
             <td><a href="#option-2">2. Via Denver</a></td>
             <td>Southwest</td>
-            <td class="price">$788 <span class="muted">per person · Choice · 1 adult</span><br><span class="muted">For 6: $788 · $4,728 total · no low-seat warning; all 6 can book together at the same price · cheapest for 6</span></td>
+            <td class="price">$788 <span class="muted">per person · Choice · 1 adult</span><br><span class="muted">For 6: $788 · $4,728 total · all 6 at the same price · cheapest for 6</span></td>
             <td>1:25 PM → 5:45 PM</td>
             <td>9:05 AM → 7:45 PM</td>
             <td>1 stop each way (DEN out, BNA back)</td>
@@ -750,7 +782,7 @@
           <tr>
             <td><a href="#option-3">3. Via Austin</a></td>
             <td>Southwest</td>
-            <td class="price">$788 <span class="muted">per person · Choice · 1 adult</span><br><span class="muted">For 6: $788 · $4,728 total · no low-seat warning; all 6 can book together at the same price · cheapest for 6</span></td>
+            <td class="price">$788 <span class="muted">per person · Choice · 1 adult</span><br><span class="muted">For 6: $788 · $4,728 total · all 6 at the same price · cheapest for 6</span></td>
             <td>2:40 PM → 7:30 PM</td>
             <td>9:05 AM → 7:45 PM</td>
             <td>1 stop each way (AUS out, BNA back)</td>
@@ -796,41 +828,38 @@
           <span class="per-person">For 6 in one booking: $799 Choice per person · $4,794 for 6</span>
         </div>
       </div>
-      <p class="seats tight"><strong>Seats:</strong> only 2 left at this price on the outbound (WN196 / WN702). Booking all 6 together costs $30 more each ($394 Choice). Only 4 left at this price on the Denver return (WN1229 / WN1334). Booking all 6 together costs $24 more each ($405 Choice).</p>
       <div class="legs">
         <div class="leg">
           <div class="leg-label">Outbound · Sun Dec 20</div>
           <p>WN196 leaves ATL at 10:00 AM → 1h 45m layover in Nashville (BNA) → WN702 lands RNO at 2:30 PM. 7h 30m total.</p>
-          <p class="seats tight"><strong>Seats:</strong> only 2 left at this price. Booking all 6 together costs $30 more each ($394 Choice).</p>
+          <p class="seats tight"><strong>Seats:</strong> Only 2 seats left at the lowest price; all 6 together is $30 more each ($394 Choice).</p>
         </div>
         <div class="leg">
           <div class="leg-label">Return · Sun Dec 27</div>
           <p>WN1229 leaves RNO at 11:45 AM PT and arrives DEN at 2:55 PM → 1h 10m layover in Denver → WN1334 leaves DEN at 4:05 PM and lands ATL at 8:55 PM ET. 6h 10m total.</p>
-          <p class="flights">Google notes this arrival is often delayed 30+ min. Booked as two one-ways.</p>
-          <p class="seats tight"><strong>Seats:</strong> only 4 left at this price. Booking all 6 together costs $24 more each ($405 Choice).</p>
+          <p class="flights">Often delayed 30+ min. Booked as two one-ways.</p>
+          <p class="seats tight"><strong>Seats:</strong> Only 4 seats left at the lowest price; all 6 together is $24 more each ($405 Choice).</p>
         </div>
       </div>
       <div class="pc">
         <div class="pros">
           <h4>Pros</h4>
           <ul>
-            <li>Cheapest Southwest option at the 1-adult price ($745), and the shortest return</li>
-            <li>Same early Reno arrival as Option 1 (2:30 PM)</li>
-            <li>Much shorter return layover (1h 10m)</li>
-            <li>Choice includes a standard seat pick</li>
+            <li>Cheapest at the 1-adult price ($745)</li>
+            <li>Shortest return (1h 10m layover)</li>
+            <li>Lands Reno 2:30 PM</li>
           </ul>
         </div>
         <div class="cons">
           <h4>Cons</h4>
           <ul>
-            <li>Google notes the return is often delayed 30+ min</li>
-            <li>For 6 in one booking, Choice is $799, which is $11 more than Options 2 and 3</li>
-            <li>Only 2 seats left on the outbound and 4 on the return at the low fare</li>
-            <li>Booked as two one-ways</li>
+            <li>Return often delayed 30+ min</li>
+            <li>For 6 together, $799 — $11 more than Options 2 and 3</li>
+            <li>Two one-ways</li>
           </ul>
         </div>
       </div>
-      <p class="note" style="margin: 0.85rem 0 0.6rem;">Southwest.com fares, per person, checked around 1:05–1:25pm ET on Friday, November 27, 2026. At the 1-adult price: Basic $645, Choice $745, Choice Preferred $905, Choice Extra $1,025. Choice is $1,490 for 2. For 6 in one booking: Basic $699, Choice $799, Choice Preferred $959, Choice Extra $1,079. Choice is $4,794 for 6. <strong>Split estimate (not tested):</strong> book 2 on the outbound at the 1-adult Choice fare of $364 plus 4 at $394, and 4 on the return at the 1-adult Choice fare of $381 plus 2 at $405, for about $4,638 total ($773 average).</p>
+      <p class="note" style="margin: 0.85rem 0 0.6rem;">1-adult: Basic $645, Choice $745, Choice Preferred $905, Choice Extra $1,025 ($1,490 for 2 on Choice). For 6 together: Basic $699, Choice $799, Choice Preferred $959, Choice Extra $1,079 ($4,794 for 6). <strong>Split estimate (not tested):</strong> 2 out at $364 Choice plus 4 at $394, and 4 back at $381 plus 2 at $405, about $4,638 total ($773 average).</p>
       <a class="btn" href="https://www.google.com/travel/flights/booking?tfs=CBwQAhpgEgoyMDI2LTEyLTIwIh8KA0FUTBIKMjAyNi0xMi0yMBoDQk5BKgJXTjIDMTk2Ih8KA0JOQRIKMjAyNi0xMi0yMBoDUk5PKgJXTjIDNzAyagcIARIDQVRMcgcIARIDUk5PQAFAAUgBcAGCAQsI____________AZgBAg&amp;curr=USD&amp;hl=en" target="_blank" rel="noopener noreferrer">Open outbound in Google Flights</a>
       <a class="btn" href="https://www.google.com/travel/flights/booking?tfs=CBwQAhpkEgoyMDI2LTEyLTI3IiAKA1JOTxIKMjAyNi0xMi0yNxoDREVOKgJXTjIEMTIyOSIgCgNERU4SCjIwMjYtMTItMjcaA0FUTCoCV04yBDEzMzQoAWoHCAESA1JOT3IHCAESA0FUTEABSAFwAYIBCwj___________8BmAEC&amp;tfu=CnhDalJJTVZKRlN6aHVOR0pwTW5kQlJIaExiMUZDUnkwdExTMHRMUzE1Ykc0eU1DMXVNa0ZCUVVGQlIzTkdOV000U1dObWJsTkJFZzFYVGpFeU1qbDhWMDR4TXpNMEdnc0l5S01DRUFJYUExVlRSRGdjY01pakFnPT0SAggAIgMSATA&amp;curr=USD&amp;hl=en" target="_blank" rel="noopener noreferrer">Open return in Google Flights</a>
     </article>
@@ -850,34 +879,32 @@
           <span class="per-person">For 6 in one booking: $818 Choice per person · $4,908 for 6</span>
         </div>
       </div>
-      <p class="seats tight"><strong>Seats:</strong> only 2 left at this price on the outbound (WN196 / WN702). Booking all 6 together costs $30 more each ($394 Choice). On the Nashville return, no low-seat warning; all 6 can book together at the same price.</p>
       <div class="legs">
         <div class="leg">
           <div class="leg-label">Outbound · Sun Dec 20</div>
           <p>WN196 leaves ATL at 10:00 AM → 1h45m layover in Nashville (BNA) → WN702 lands RNO at 2:30 PM.</p>
-          <p class="seats tight"><strong>Seats:</strong> only 2 left at this price. Booking all 6 together costs $30 more each ($394 Choice).</p>
+          <p class="seats tight"><strong>Seats:</strong> Only 2 seats left at the lowest price; all 6 together is $30 more each ($394 Choice).</p>
         </div>
         <div class="leg">
           <div class="leg-label">Return · Sun Dec 27</div>
           <p>WN2261 leaves RNO at 9:05 AM → 2h40m layover in Nashville (BNA) → WN237 lands ATL at 7:45 PM.</p>
-          <p class="flights">Same return flight as Options 2 and 3.</p>
-          <p class="seats"><strong>Seats:</strong> no low-seat warning; all 6 can book together at the same price.</p>
+          <p class="flights">Same return as Options 2 and 3.</p>
+          <p class="seats"><strong>Seats:</strong> All 6 can book together at the same price.</p>
         </div>
       </div>
       <div class="pc">
         <div class="pros">
           <h4>Pros</h4>
           <ul>
-            <li>Earliest arrival in Reno (2:30 PM)</li>
-            <li>Nashville is basically on the way</li>
-            <li>Same early Reno arrival as Option 0; Option 0 is $43 less on Choice at the 1-adult price, with a shorter return</li>
+            <li>Earliest Reno arrival (2:30 PM)</li>
+            <li>Nashville is on the way</li>
           </ul>
         </div>
         <div class="cons">
           <h4>Cons</h4>
           <ul>
-            <li>2h40m layover on the return</li>
-            <li>Southwest</li>
+            <li>2h 40m return layover</li>
+            <li>For 6 together, $818 vs $788 on Options 2 and 3</li>
           </ul>
         </div>
       </div>
@@ -897,18 +924,17 @@
           <span class="per-person">For 6 in one booking: $788 Choice per person · $4,728 for 6</span>
         </div>
       </div>
-      <p class="seats"><strong>Seats:</strong> no low-seat warning; all 6 can book together at the same price.</p>
       <div class="legs">
         <div class="leg">
           <div class="leg-label">Outbound · Sun Dec 20</div>
           <p>WN1581 leaves ATL at 1:25 PM → 1h35m layover in Denver (DEN) → WN3762 lands RNO at 5:45 PM.</p>
-          <p class="seats"><strong>Seats:</strong> no low-seat warning; all 6 can book together at the same price.</p>
+          <p class="seats"><strong>Seats:</strong> All 6 can book together at the same price.</p>
         </div>
         <div class="leg">
           <div class="leg-label">Return · Sun Dec 27</div>
           <p>WN2261 leaves RNO at 9:05 AM → 2h40m layover in Nashville (BNA) → WN237 lands ATL at 7:45 PM.</p>
-          <p class="flights">Same return flight as Options 1 and 3.</p>
-          <p class="seats"><strong>Seats:</strong> no low-seat warning; all 6 can book together at the same price.</p>
+          <p class="flights">Same return as Options 1 and 3.</p>
+          <p class="seats"><strong>Seats:</strong> All 6 can book together at the same price.</p>
         </div>
       </div>
       <div class="pc">
@@ -916,16 +942,16 @@
           <h4>Pros</h4>
           <ul>
             <li>Relaxed morning before departure</li>
-            <li>Denver is right on the way</li>
-            <li>Same 1-adult Choice price as Option 1; for 6 in one booking, cheaper than Option 1 and tied with Option 3 as the cheapest Choice option</li>
+            <li>Denver is on the way</li>
+            <li>Cheapest Choice for 6, tied with Option 3 ($788)</li>
           </ul>
         </div>
         <div class="cons">
           <h4>Cons</h4>
           <ul>
-            <li>Lands at dinnertime (5:45 PM)</li>
+            <li>Lands 5:45 PM</li>
             <li>Denver winter-weather risk</li>
-            <li>Same long 2h40m return layover</li>
+            <li>2h 40m return layover</li>
           </ul>
         </div>
       </div>
@@ -945,18 +971,17 @@
           <span class="per-person">For 6 in one booking: $788 Choice per person · $4,728 for 6</span>
         </div>
       </div>
-      <p class="seats"><strong>Seats:</strong> no low-seat warning; all 6 can book together at the same price.</p>
       <div class="legs">
         <div class="leg">
           <div class="leg-label">Outbound · Sun Dec 20</div>
           <p>WN193 leaves ATL at 2:40 PM → 1h40m layover in Austin (AUS) → WN419 lands RNO at 7:30 PM.</p>
-          <p class="seats"><strong>Seats:</strong> no low-seat warning; all 6 can book together at the same price.</p>
+          <p class="seats"><strong>Seats:</strong> All 6 can book together at the same price.</p>
         </div>
         <div class="leg">
           <div class="leg-label">Return · Sun Dec 27</div>
           <p>WN2261 leaves RNO at 9:05 AM → 2h40m layover in Nashville (BNA) → WN237 lands ATL at 7:45 PM.</p>
-          <p class="flights">Same return flight as Options 1 and 2.</p>
-          <p class="seats"><strong>Seats:</strong> no low-seat warning; all 6 can book together at the same price.</p>
+          <p class="flights">Same return as Options 1 and 2.</p>
+          <p class="seats"><strong>Seats:</strong> All 6 can book together at the same price.</p>
         </div>
       </div>
       <div class="pc">
@@ -964,14 +989,15 @@
           <h4>Pros</h4>
           <ul>
             <li>Latest departure (2:40 PM)</li>
+            <li>Cheapest Choice for 6, tied with Option 2 ($788)</li>
           </ul>
         </div>
         <div class="cons">
           <h4>Cons</h4>
           <ul>
-            <li>Same 1-adult Choice price as Options 1 and 2, and $43 more than Option 0. For 6 in one booking, tied with Option 2 as the cheapest Choice option</li>
-            <li>Lands in the evening (7:30 PM)</li>
+            <li>Lands 7:30 PM</li>
             <li>About 10% out of the way</li>
+            <li>1-adult Choice is $43 more than Option 0</li>
           </ul>
         </div>
       </div>
@@ -990,7 +1016,7 @@
           <span class="per-person">$1,701.50 per person at 4 adults · $3,403 for 2</span>
         </div>
       </div>
-      <p class="seats unavailable"><strong>Seats:</strong> not available for 6. Google shows it for at most 4.</p>
+      <p class="seats unavailable"><strong>Seats:</strong> Not available for 6. Google shows it for at most 4.</p>
       <div class="legs">
         <div class="leg">
           <div class="leg-label">Outbound · Sun Dec 20</div>
@@ -1035,7 +1061,7 @@
           <span class="per-person">For 6: $1,316.67 per person · $7,900 for 6</span>
         </div>
       </div>
-      <p class="seats"><strong>Seats:</strong> available for all 6 (airline doesn't show a count). At 6 adults: $1,316.67 per person ($7,900 for 6).</p>
+      <p class="seats"><strong>Seats:</strong> Available for all 6 (airline doesn't show a count). $1,316.67 per person ($7,900 for 6).</p>
       <div class="legs">
         <div class="leg">
           <div class="leg-label">Outbound · Sun Dec 20</div>
@@ -1058,7 +1084,7 @@
         <div class="cons">
           <h4>Cons</h4>
           <ul>
-            <li>Lands around 10:00 PM (9:58 PM)</li>
+            <li>Lands 9:58 PM</li>
             <li>Nearly double the Southwest price</li>
             <li>Tight 36m connection on the return</li>
           </ul>
@@ -1080,7 +1106,7 @@
           <span class="per-person">For 6: $1,184.17 per person · $7,105 for 6</span>
         </div>
       </div>
-      <p class="seats"><strong>Seats:</strong> available for all 6 (airline doesn't show a count). At 6 adults: $1,184.17 per person ($7,105 for 6).</p>
+      <p class="seats"><strong>Seats:</strong> Available for all 6 (airline doesn't show a count). $1,184.17 per person ($7,105 for 6).</p>
       <div class="legs">
         <div class="leg">
           <div class="leg-label">Outbound · Sun Dec 20</div>
@@ -1114,19 +1140,15 @@
 
     <h2 id="mix-and-match">Mix and match: Southwest out, different return</h2>
     <section class="panel intro" aria-labelledby="mix-and-match">
-      <div class="price-banner">
-        <strong>These are one-way fares, per person. You can pair either Southwest outbound with a different Sunday return.</strong>
-      </div>
-      <p>The Southwest outbounds below are the cheapest listed 1-adult fares, likely Basic, so seat selection may cost extra. The American return is Main Cabin, which includes seat selection. <a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTEyLTIwagcIARIDQVRMcgcIARIDUk5PQAFAAUgBcAGCAQsI____________AZgBAg&amp;curr=USD&amp;hl=en" target="_blank" rel="noopener noreferrer">Open the Sunday outbound search in Google Flights</a>.</p>
-      <p>For comparison, pairing either of these one-way outbounds with the current Southwest return through Nashville comes to $688 per person on Basic at the 1-adult price. The matching Choice total is $788. For 6, the Option 1 outbound and the Denver return cost more because those low fares only hold 2 and 4 seats. Party-of-6 prices are on each flight card below.</p>
+      <p>Pair either Southwest outbound with a different Sunday return. One-way fares, per person. The table uses 1-adult Basic on Southwest; party-of-6 prices are on the cards. <a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTEyLTIwagcIARIDQVRMcgcIARIDUk5PQAFAAUgBcAGCAQsI____________AZgBAg&amp;curr=USD&amp;hl=en" target="_blank" rel="noopener noreferrer">Open the Sunday outbound search in Google Flights</a>. Checked 1:05–1:25pm ET Friday, November 27, 2026.</p>
       <div class="pick">
-        <strong>Takeaway: the American return saves about 70 minutes of layover but costs $244.50 per person more than the Southwest Basic return at the 1-adult price, or $194.50 more than Southwest Choice.</strong> For 6, American is $708.33 per person ($4,250 for 6), which is $334.33 more than the Southwest Basic Nashville return.
+        <strong>Takeaway:</strong> the American return saves about 70 minutes of layover but costs $244.50 more per person than Southwest Basic at the 1-adult price ($194.50 more than Choice). For 6, American is $708.33 ($4,250), which is $334.33 more than the Southwest Basic Nashville return.
       </div>
     </section>
 
     <div class="panel table-wrap" style="padding:0.9rem 0.6rem 0.4rem;">
       <table>
-        <caption>Mixed totals below are 1-adult fares, one-way out plus one-way back, per person. Times are local. The Southwest pieces are the cheapest listed fares (Basic). Party-of-6 prices are on the flight cards, because the Option 1 outbound and the Denver return cost more in a 6-adult search.</caption>
+        <caption>1-adult totals, out plus back. Southwest fares are Basic. Times are local. Party-of-6 prices are on the cards.</caption>
         <thead>
           <tr>
             <th>Combination</th>
@@ -1200,14 +1222,14 @@
           <div class="amount">$314 <span class="per-label">per person</span></div>
           <span class="alt">Basic · one way · 1-adult price</span>
           <span class="per-person">$628 for 2</span>
-          <span class="per-person">For 6: Basic $344 / Choice $394 per person (low fare holds only 2)</span>
+          <span class="per-person">For 6: Basic $344 / Choice $394 (only 2 seats at the lowest price)</span>
         </div>
       </div>
       <div class="legs">
         <div class="leg">
           <div class="leg-label">Outbound · Sun Dec 20</div>
           <p>WN196 leaves ATL at 10:00 AM → 1h 45m layover in Nashville (BNA) → WN702 lands RNO at 2:30 PM.</p>
-          <p class="seats tight"><strong>Seats:</strong> only 2 left at this price. Booking all 6 together costs $30 more each ($394 Choice).</p>
+          <p class="seats tight"><strong>Seats:</strong> Only 2 seats left at the lowest price; all 6 together is $30 more each ($394 Choice).</p>
         </div>
       </div>
     </article>
@@ -1222,14 +1244,14 @@
           <div class="amount">$314 <span class="per-label">per person</span></div>
           <span class="alt">Basic · one way · 1-adult price</span>
           <span class="per-person">$628 for 2</span>
-          <span class="per-person">For 6: still Basic $314 / Choice $364 per person, fine for 6</span>
+          <span class="per-person">For 6: still Basic $314 / Choice $364</span>
         </div>
       </div>
       <div class="legs">
         <div class="leg">
           <div class="leg-label">Outbound · Sun Dec 20</div>
           <p>WN1581 leaves ATL at 1:25 PM → 1h 35m layover in Denver (DEN) → WN3762 lands RNO at 5:45 PM.</p>
-          <p class="seats"><strong>Seats:</strong> no low-seat warning; all 6 can book together at the same price.</p>
+          <p class="seats"><strong>Seats:</strong> All 6 can book together at the same price.</p>
         </div>
       </div>
     </article>
@@ -1246,15 +1268,15 @@
           <div class="amount">$374 <span class="per-label">per person</span></div>
           <span class="alt">Basic · one way · 1-adult price</span>
           <span class="per-person">$748 for 2</span>
-          <span class="per-person">For 6: still Basic $374 / Choice $424 per person, fine for 6</span>
+          <span class="per-person">For 6: still Basic $374 / Choice $424</span>
         </div>
       </div>
       <div class="legs">
         <div class="leg">
           <div class="leg-label">Return · Sun Dec 27</div>
           <p>WN2261 leaves RNO at 9:05 AM PT → 2h 40m layover in Nashville (BNA) → WN237 lands ATL at 7:45 PM ET. 7h 40m total.</p>
-          <p class="flights">This is the same return already used on Options 1, 2, and 3 above, shown here as a one-way for comparison.</p>
-          <p class="seats"><strong>Seats:</strong> no low-seat warning; all 6 can book together at the same price.</p>
+          <p class="flights">Same return as Options 1, 2, and 3, shown as a one-way.</p>
+          <p class="seats"><strong>Seats:</strong> All 6 can book together at the same price.</p>
         </div>
       </div>
     </article>
@@ -1276,7 +1298,7 @@
         <div class="leg">
           <div class="leg-label">Return · Sun Dec 27</div>
           <p>AA1911 leaves RNO at 11:09 AM PT → 1h 26m layover in Dallas/Fort Worth (DFW) → AA2237 lands ATL at 8:58 PM ET. 6h 49m total.</p>
-          <p class="seats"><strong>Seats:</strong> available for all 6 (airline doesn't show a count). At 6 adults: $708.33 per person ($4,250 for 6).</p>
+          <p class="seats"><strong>Seats:</strong> Available for all 6 (airline doesn't show a count). $708.33 per person ($4,250 for 6).</p>
         </div>
       </div>
       <div class="pc">
@@ -1291,8 +1313,8 @@
         <div class="cons">
           <h4>Cons</h4>
           <ul>
-            <li>$244.50 per person more than the current Southwest Basic return at the 1-adult price ($194.50 more than Choice). For 6, $334.33 more than Southwest Basic ($284.33 more than Choice)</li>
-            <li>Lands later, at 8:58 PM</li>
+            <li>$244.50 more than SW Basic at the 1-adult price ($194.50 more than Choice); for 6, $334.33 more than SW Basic</li>
+            <li>Lands 8:58 PM</li>
           </ul>
         </div>
       </div>
@@ -1309,30 +1331,30 @@
           <div class="amount">$394 <span class="per-label">per person</span></div>
           <span class="alt">Basic · one way · 1-adult price</span>
           <span class="per-person">$788 for 2</span>
-          <span class="per-person">For 6: still Basic $394 / Choice $439 per person, fine for 6</span>
+          <span class="per-person">For 6: still Basic $394 / Choice $439</span>
         </div>
       </div>
       <div class="legs">
         <div class="leg">
           <div class="leg-label">Return · Sun Dec 27</div>
           <p>WN175 leaves RNO at 10:05 AM PT → 2h 20m layover in Dallas Love Field (DAL) → WN212 lands ATL at 8:35 PM ET. 7h 30m total.</p>
-          <p class="seats"><strong>Seats:</strong> no low-seat warning; all 6 can book together at the same price.</p>
+          <p class="seats"><strong>Seats:</strong> All 6 can book together at the same price.</p>
         </div>
       </div>
       <div class="pc">
         <div class="pros">
           <h4>Pros</h4>
           <ul>
-            <li>20 minutes less layover than the Nashville return</li>
-            <li>Later departure from Reno than the 9:05 AM flight</li>
-            <li>Much cheaper than the American return</li>
+            <li>20 min less layover than Nashville</li>
+            <li>Later than the 9:05 AM departure</li>
+            <li>Much cheaper than American</li>
           </ul>
         </div>
         <div class="cons">
           <h4>Cons</h4>
           <ul>
-            <li>$20 per person more than the current Southwest Basic return</li>
-            <li>Seat selection may cost extra if this is Basic</li>
+            <li>$20 more than the Nashville Basic return</li>
+            <li>Basic seat selection may cost extra</li>
           </ul>
         </div>
       </div>
@@ -1349,32 +1371,32 @@
           <div class="amount">$331 <span class="per-label">per person</span></div>
           <span class="alt">Basic · one way · 1-adult price</span>
           <span class="per-person">$662 for 2</span>
-          <span class="per-person">For 6: Basic $355 / Choice $405 per person (low fare holds only 4)</span>
+          <span class="per-person">For 6: Basic $355 / Choice $405 (only 4 seats at the lowest price)</span>
         </div>
       </div>
       <div class="legs">
         <div class="leg">
           <div class="leg-label">Return · Sun Dec 27</div>
           <p>WN1229 leaves RNO at 11:45 AM PT and arrives DEN at 2:55 PM (2h 10m) → 1h 10m layover in Denver → WN1334 leaves DEN at 4:05 PM and lands ATL at 8:55 PM ET (2h 50m). 6h 10m total.</p>
-          <p class="flights">Google notes this arrival is often delayed 30+ min.</p>
-          <p class="seats tight"><strong>Seats:</strong> only 4 left at this price. Booking all 6 together costs $24 more each ($405 Choice).</p>
+          <p class="flights">Often delayed 30+ min.</p>
+          <p class="seats tight"><strong>Seats:</strong> Only 4 seats left at the lowest price; all 6 together is $24 more each ($405 Choice).</p>
         </div>
       </div>
       <div class="pc">
         <div class="pros">
           <h4>Pros</h4>
           <ul>
-            <li>Shortest layover of the Southwest returns (1h 10m)</li>
-            <li>Cheapest Southwest return on this check ($43 less than Nashville on Basic at the 1-adult price, $19 less in a 6-adult search; the low fare holds only 4)</li>
-            <li>Later Reno departure than the 9:05 AM Nashville return (11:45 AM)</li>
-            <li>Lands at 8:55 PM, before 10pm</li>
+            <li>Shortest Southwest layover (1h 10m)</li>
+            <li>Cheapest Southwest return ($43 less than Nashville Basic at the 1-adult price, $19 less for 6)</li>
+            <li>Later Reno departure (11:45 AM) than the 9:05 AM Nashville return</li>
+            <li>Lands 8:55 PM</li>
           </ul>
         </div>
         <div class="cons">
           <h4>Cons</h4>
           <ul>
-            <li>Google notes this arrival is often delayed 30+ min</li>
-            <li>Seat selection may cost extra on Basic</li>
+            <li>Often delayed 30+ min</li>
+            <li>Basic seat selection may cost extra</li>
           </ul>
         </div>
       </div>
@@ -1384,17 +1406,16 @@
 
     <section class="panel intro" aria-labelledby="southwest-fares">
       <h2 id="southwest-fares" style="color:var(--ink);text-shadow:none;margin-top:0;font-size:1.25rem;">Southwest.com fare types</h2>
-      <p>Checked on Southwest.com around 1:05–1:25pm ET on Friday, November 27, 2026. Prices are per person, one way. 1-adult fares are listed first, then the 6-adult search where it differs.</p>
-      <p>Option 1 outbound (WN196 / WN702): 1-adult Basic $314, Choice $364, Choice Preferred $444, Choice Extra $504, with 2 left on all fares (was 5 left at 12:55pm). A 6-adult search is Basic $344, Choice $394, Choice Preferred $474, Choice Extra $534 ($30 more; the low fare holds only 2). Option 2 outbound (WN1581 / WN3762): Basic $314, Choice $364, Choice Preferred $444, Choice Extra $504, no low-seat warning; all 6 can book together at the same price. Option 3 outbound (WN193 / WN419): Basic $314, Choice $364, Choice Preferred $444, Choice Extra $504, no low-seat warning; all 6 can book together at the same price.</p>
-      <p>Nashville return (WN2261 / WN237): Basic $374, Choice $424, Choice Preferred $504, Choice Extra $564, no low-seat warning; all 6 can book together at the same price. Dallas Love Field return (WN175 / WN212): Basic $394, Choice $439, Choice Preferred $519, Choice Extra $579, no low-seat warning; all 6 can book together at the same price. Denver return (WN1229 / WN1334): 1-adult Basic $331, Choice $381, Choice Preferred $461, Choice Extra $521, with 4 left on all fares. A 6-adult search is Basic $355, Choice $405, Choice Preferred $485, Choice Extra $545 ($24 more; the low fare holds only 4).</p>
-      <p>Choice includes a standard seat pick. Basic seats are assigned at check-in. At the 1-adult Choice price, Option 0 is $745 per person, and Options 1, 2, and 3 are $788. For all 6 in one booking, Option 0 is $799, Option 1 is $818, and Options 2 and 3 are $788, the cheapest Choice options for 6. Option 1 out plus this Denver return is Option 0.</p>
+      <p>Checked 1:05–1:25pm ET Friday, November 27, 2026. Per person, one way. 1-adult first, then 6-adult where it differs. “N seats left” means seats at the lowest price.</p>
+      <p>WN196 / WN702 (Option 1 out): 1-adult Basic $314, Choice $364, Choice Preferred $444, Choice Extra $504 (was 5 left at 12:55pm). For 6: $344 / $394 / $474 / $534 ($30 more; only 2 seats at the lowest price).</p>
+      <p>WN1581 / WN3762 (Option 2 out): $314 / $364 / $444 / $504. All 6 can book together at the same price. WN193 / WN419 (Option 3 out): $314 / $364 / $444 / $504. All 6 can book together at the same price.</p>
+      <p>WN2261 / WN237 (Nashville return): $374 / $424 / $504 / $564. All 6 can book together at the same price. WN175 / WN212 (Dallas Love Field return): $394 / $439 / $519 / $579. All 6 can book together at the same price.</p>
+      <p>WN1229 / WN1334 (Denver return): 1-adult $331 / $381 / $461 / $521. For 6: $355 / $405 / $485 / $545 ($24 more; only 4 seats at the lowest price).</p>
+      <p>Choice includes a seat pick. Basic seats are assigned at check-in. 1-adult Choice: Option 0 $745, Options 1–3 $788. For 6 together: Option 0 $799, Option 1 $818, Options 2 and 3 $788 (cheapest for 6). Option 1 out plus the Denver return is Option 0.</p>
     </section>
 
-    <p class="note" style="margin: 1rem 0 1.5rem;">Mix-and-match prices are per person, one way. Prices were checked around 1:05–1:25pm ET on Friday, November 27, 2026. Southwest mixed totals in the table above use 1-adult Basic one-way fares. They can change. Checked bags are not included.</p>
-
     <footer class="foot">
-      <p>Prices are per person, round trip, in economy. 1-adult prices and party-of-6 prices were checked around 1:05–1:25pm ET on Friday, November 27, 2026. They can change. Checked bags are not included.</p>
-      <p>A family of four (two adults, two kids) plans to book the same flights later, so book soon if a fare looks right, and expect totals to scale per person.</p>
+      <p>Prices can change. Checked bags are not included. A family of four plans to book the same flights later, so book soon if a fare looks right.</p>
     </footer>
     </div>
 
