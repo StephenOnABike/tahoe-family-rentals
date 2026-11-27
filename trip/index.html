@@ -506,7 +506,7 @@
     @media (max-width: 680px) {
       .map-link { white-space: normal; }
       .tabs { border-radius: 18px; }
-      .tabs button { font-size: 0.92rem; padding: 0.5rem 0.45rem; }
+      .tabs button { font-size: 0.85rem; padding: 0.5rem 0.28rem; }
     }
 
     .book-kicker {
@@ -555,6 +555,17 @@
     .book-item.is-done h3 { color: var(--ink-soft); }
     .book-meta { margin: 0 0 0.4rem; color: var(--ink-soft); font-size: 0.95rem; }
     .book-why { margin: 0 0 0.55rem; }
+
+    .card.car-pick { border-top-color: var(--pine); }
+    .card.car-miss { border-top-color: #9aa7b4; opacity: 0.94; }
+    .car-facts { margin: 0 0 0.9rem; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0.35rem 1rem; font-size: 0.95rem; }
+    .car-facts li { margin: 0; }
+    .car-facts strong { color: var(--ink); }
+    .car-tag { display: inline-block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.18rem 0.5rem; border-radius: 999px; vertical-align: middle; }
+    .car-tag--yes { background: #1b6b45; color: #fff; }
+    .car-tag--no { background: #9a2f1a; color: #fff; }
+    .car-tag--maybe { background: #c9892a; color: #fff; }
+    .badge.car-rec { background: var(--pine); }
 
   </style>
 </head>
@@ -670,10 +681,11 @@
       <p class="hero-sub">Six round-trip options for Mom &amp; Dad, Sunday to Sunday, with no more than one stop each way.</p>
     </header>
 
-    <nav id="tabs" class="tabs" role="tablist" aria-label="Flights, itinerary, and bookings">
+    <nav id="tabs" class="tabs" role="tablist" aria-label="Flights, itinerary, bookings, and rental car">
       <button type="button" role="tab" id="tab-flights" aria-controls="flights" aria-selected="true" tabindex="0">Flights</button>
       <button type="button" role="tab" id="tab-itinerary" aria-controls="itinerary" aria-selected="false" tabindex="-1">Itinerary</button>
       <button type="button" role="tab" id="tab-booknow" aria-controls="booknow" aria-selected="false" tabindex="-1">Book now</button>
+      <button type="button" role="tab" id="tab-rentalcar" aria-controls="rentalcar" aria-selected="false" tabindex="-1">Rental car</button>
     </nav>
 
     <div id="flights" class="tab-panel" role="tabpanel" aria-labelledby="tab-flights">
@@ -1772,6 +1784,146 @@
       </footer>
     </div>
 
+    <div id="rentalcar" class="tab-panel" role="tabpanel" aria-labelledby="tab-rentalcar" hidden>
+      <section class="panel intro" aria-labelledby="rentalcar-overview">
+        <h2 id="rentalcar-overview" style="color:var(--ink);text-shadow:none;margin-top:0;font-size:1.25rem;">Rental car from Reno airport</h2>
+        <div class="price-banner">
+          <strong>Nothing here is booked or held. Prices were checked Friday, November 27, 2026, about 1:06–1:15 PM ET, and can change.</strong>
+        </div>
+        <p>Pick up at <strong>Reno-Tahoe Airport (RNO)</strong> on <strong>Sun Dec 20 around 3:00 PM</strong>, after the 2:30 PM Southwest landing. Return on <strong>Sun Dec 27 around 7:00–7:30 AM</strong>, early enough for either the 9:05 AM or the 11:45 AM flight home. Either way, it's billed as a 7-day rental.</p>
+        <p>The car needs room for 6 (Mom &amp; Dad, Lindsay, Ani, Ayaan, and Laila), a week of bags, and ski gear. That means an 8-seat full-size SUV or a big van. A 7-seat SUV with little room behind the third row doesn't work.</p>
+        <p class="note"><strong>Price caveat:</strong> the big booking sites wouldn't return live Dec 20–27 quotes to us. Kayak, Expedia, Priceline search, and Costco Travel all blocked automated checks. The totals below come from Priceline's live Reno page for the <strong>next week (Dec 27–Jan 3)</strong>, including taxes and fees. Treat them as a guide to holiday-week prices, not as quotes for these dates. Check the final price on the company's own site before booking.</p>
+        <div class="pick">
+          <strong>Recommended (not booked): Reno Tahoe Rental Car, GMC Yukon XL.</strong>
+          It's the only option we found that promises a specific full-size 4WD vehicle with winter snow tires, and it's delivered at RNO. It doesn't publish prices, so you'll need to ask for a quote. If the quote is too high, go with option 2: a Premium SUV at a major company's airport counter, on a pay-later rate.
+        </div>
+      </section>
+
+      <h2>Ranked options</h2>
+
+      <article class="card car-pick" id="car-1">
+        <div class="card-head">
+          <div>
+            <div class="airline">Reno Tahoe Rental Car (local, delivers to RNO)</div>
+            <h3>1. GMC Yukon XL (AT4 or Denali) <span class="badge car-rec">Recommended</span></h3>
+          </div>
+          <div class="fares">
+            <div class="amount">Quote needed</div>
+            <span class="alt">No prices published online</span>
+          </div>
+        </div>
+        <ul class="car-facts">
+          <li><strong>4WD:</strong> <span class="car-tag car-tag--yes">Guaranteed</span> exact vehicle, no "or similar"</li>
+          <li><strong>Tires:</strong> the company says every car has dedicated winter snow tires</li>
+          <li><strong>Seats:</strong> 7–8, depending on the vehicle</li>
+          <li><strong>Bags:</strong> the company lists about 41.5 cu ft behind row 3 on the Yukon XL AT4</li>
+          <li><strong>Pickup:</strong> delivered to Reno-Tahoe Airport</li>
+          <li><strong>Cancellation:</strong> not published; ask when you get the quote</li>
+        </ul>
+        <p><strong>Why:</strong> it's the best fit for 4WD. You know exactly which XL-body vehicle you'll get, and it comes on snow tires. A 4WD with snow tires can keep going without chains in Caltrans R-2 controls, where an "or similar" car with all-season tires may not qualify.</p>
+        <a class="btn" href="https://www.renotahoerentalcar.com/fleet" target="_blank" rel="noopener noreferrer">See the fleet</a>
+      </article>
+
+      <article class="card" id="car-2">
+        <div class="card-head">
+          <div>
+            <div class="airline">Avis · Budget · Hertz · Enterprise · National (RNO counters)</div>
+            <h3>2. Premium SUV: Chevrolet Suburban, Ford Expedition MAX, or GMC Yukon XL, "or similar"</h3>
+          </div>
+          <div class="fares">
+            <div class="amount">~$106–$107 <span class="per-label">per day</span></div>
+            <span class="alt">Kayak's lowest prices users found for other December dates, before taxes</span>
+          </div>
+        </div>
+        <ul class="car-facts">
+          <li><strong>4WD:</strong> <span class="car-tag car-tag--maybe">Not guaranteed</span> you reserve the class, not the drivetrain</li>
+          <li><strong>Seats:</strong> 8</li>
+          <li><strong>Bags:</strong> Kayak lists 5. This class has the most room for bags and ski gear</li>
+          <li><strong>Pickup:</strong> counters in baggage claim, cars in the garage next door</li>
+          <li><strong>Cancellation:</strong> pay-later rates are usually free to cancel. Costco Travel says pay at the counter, no cancellation fees, and one additional-driver fee waived</li>
+          <li><strong>Extra drivers:</strong> Avis charges $11/day per extra driver in Nevada, and a spouse is free</li>
+        </ul>
+        <p><strong>Why:</strong> the most room for 6 people and gear, and likely the best value. But none of these appeared in Priceline's 300 Reno results for the following week, so they may be scarce. Reserve a free-cancellation rate soon and ask at the counter for a 4WD with M+S tires.</p>
+        <a class="btn" href="https://www.costcotravel.com/Rental-Cars" target="_blank" rel="noopener noreferrer">Costco Travel</a>
+        <a class="btn" href="https://www.avis.com/en/locations/us/nv/reno/rno" target="_blank" rel="noopener noreferrer">Avis RNO</a>
+        <a class="btn" href="https://www.kayak.com/cars/RNO/2026-12-20-15h/2026-12-27-07h?sort=price_a" target="_blank" rel="noopener noreferrer">Kayak, Dec 20–27</a>
+      </article>
+
+      <article class="card" id="car-3">
+        <div class="card-head">
+          <div>
+            <div class="airline">Dollar (RNO), two cars</div>
+            <h3>3. Two Mid-Size AWD SUVs: Nissan Rogue AWD or similar</h3>
+          </div>
+          <div class="fares">
+            <div class="amount">$1,296 <span class="per-label">for both</span></div>
+            <span class="alt">$648 each, taxes and fees included · Dec 27–Jan 3 price</span>
+          </div>
+        </div>
+        <ul class="car-facts">
+          <li><strong>AWD:</strong> <span class="car-tag car-tag--yes">Guaranteed</span> the class itself is AWD</li>
+          <li><strong>Seats:</strong> 5 + 5</li>
+          <li><strong>Bags:</strong> 2 per car listed, so 4 total, plus the back seats</li>
+          <li><strong>Pickup:</strong> RNO, 2001 E Plumb Ln</li>
+          <li><strong>Cancellation:</strong> pay later, free cancellation</li>
+          <li><strong>Drivers:</strong> needs two drivers, one per car</li>
+        </ul>
+        <p><strong>Why:</strong> AWD is guaranteed, and there's more total room than any 7-seat SUV. The cost is two cars to park and fuel, and the group splits up for drives.</p>
+        <a class="btn" href="https://www.priceline.com/rentalcars/listings/RNO/RNO/20261220-15:00/20261227-07:00/list" target="_blank" rel="noopener noreferrer">Priceline, Dec 20–27</a>
+      </article>
+
+      <article class="card" id="car-4">
+        <div class="card-head">
+          <div>
+            <div class="airline">Alamo or Enterprise (RNO counters)</div>
+            <h3>4. 8-seat minivan: Honda Odyssey or similar</h3>
+          </div>
+          <div class="fares">
+            <div class="amount">$769 <span class="per-label">total</span></div>
+            <span class="alt">Alamo, taxes and fees included · Enterprise $790 · Dec 27–Jan 3 price</span>
+          </div>
+        </div>
+        <ul class="car-facts">
+          <li><strong>AWD:</strong> <span class="car-tag car-tag--no">No</span> Priceline lists it as 2WD (front-wheel drive)</li>
+          <li><strong>Seats:</strong> 8</li>
+          <li><strong>Bags:</strong> 5 listed, with a deep well behind row 3</li>
+          <li><strong>Pickup:</strong> RNO, 2001 E Plumb Ln</li>
+          <li><strong>Cancellation:</strong> pay later, free cancellation</li>
+        </ul>
+        <p><strong>Why:</strong> the cheapest vehicle that really fits 6 plus gear. But it's 2WD, so in R-1 or R-2 chain control you'd have to chain up, and most rental contracts ban chains. Only pick this if you're willing to wait out storms.</p>
+        <a class="btn" href="https://www.priceline.com/rentalcars/listings/RNO/RNO/20261220-15:00/20261227-07:00/list" target="_blank" rel="noopener noreferrer">Priceline, Dec 20–27</a>
+      </article>
+
+      <article class="card car-miss" id="car-miss">
+        <div class="card-head">
+          <div>
+            <div class="airline">Looked at and passed over</div>
+            <h3>7-seat AWD SUVs: Dodge Durango or Hyundai Santa Fe, or similar</h3>
+          </div>
+          <div class="fares">
+            <div class="amount">$802–$882</div>
+            <span class="alt">Alamo $802, Enterprise $882 (Durango) · Dollar $844 (Santa Fe) · Dec 27–Jan 3 prices</span>
+          </div>
+        </div>
+        <p><strong>AWD guaranteed</strong> (the class is labeled AWD), but with all 6 seats in use there's only room for 3–4 bags behind the third row. That doesn't fit a week of luggage plus ski gear without a roof box. The Kia Carnival vans at $741 list only 2 bags, and the Nissan Pathfinder-class SUVs list 1–2 bags, so they miss too.</p>
+      </article>
+
+      <section class="panel intro" aria-labelledby="rentalcar-winter">
+        <h2 id="rentalcar-winter" style="color:var(--ink);text-shadow:none;margin-top:0;font-size:1.2rem;">Winter roads and chains</h2>
+        <p>US-50 (Spooner Summit), Kingsbury Grade, Mt Rose, and I-80 often have chain controls. Under Caltrans rules, <strong>R-1</strong> exempts 4WD/AWD vehicles, and <strong>R-2</strong> exempts only 4WD/AWD vehicles with snow-tread (M+S) tires on all four wheels. Under <strong>R-3</strong>, every vehicle must use chains. Caltrans also says a 4WD must <em>carry</em> chains in a chain-control area, while most rental contracts ban putting them on. Ask the company about this before you go. Snow tires are only promised in option 1.</p>
+        <p class="link-stack">
+          <a href="https://dot.ca.gov/travel/winter-driving-tips/chain-controls" target="_blank" rel="noopener noreferrer">Caltrans chain controls</a>
+          <a href="https://quickmap.dot.ca.gov/" target="_blank" rel="noopener noreferrer">Caltrans QuickMap</a>
+          <a href="https://www.nvroads.com/" target="_blank" rel="noopener noreferrer">Nevada 511 road conditions (NDOT)</a>
+        </p>
+        <p class="note"><strong>Booster seats:</strong> this page doesn't mention car seats. Ayaan (12) and Laila (11) are past the ages in California's booster law (under 8) and Nevada's (under 6), so they probably don't need one. Check that the seat belt fits them properly.</p>
+      </section>
+
+      <footer class="foot">
+        <p>Checked Friday, November 27, 2026, about 1:06–1:15 PM ET. Priceline's live Reno page (Dec 27–Jan 3 rates, taxes and fees included), Kayak's Reno pages, Avis's Reno policy page, and Reno Tahoe Rental Car's fleet page. Kayak, Expedia, Priceline search, Costco Travel, AutoSlash, Enterprise, and Alamo couldn't be checked for Dec 20–27. Nothing is booked or held.</p>
+      </footer>
+    </div>
+
   </div>
 
   <script>
@@ -1780,7 +1932,8 @@
       var panels = {
         flights: document.getElementById("flights"),
         itinerary: document.getElementById("itinerary"),
-        booknow: document.getElementById("booknow")
+        booknow: document.getElementById("booknow"),
+        rentalcar: document.getElementById("rentalcar")
       };
       var aliases = { activities: "itinerary" };
 
@@ -1817,6 +1970,11 @@
         }
         if (raw === "booknow") {
           show("booknow", false);
+          requestAnimationFrame(toTop);
+          return;
+        }
+        if (raw === "rentalcar") {
+          show("rentalcar", false);
           requestAnimationFrame(toTop);
           return;
         }
