@@ -195,6 +195,16 @@
       color: var(--ink-soft);
     }
     .note strong { color: var(--ink); }
+    .delta-note {
+      background: linear-gradient(120deg, rgba(255, 233, 236, 0.95), rgba(255, 255, 255, 0.92));
+      border: 1px solid rgba(200, 16, 46, 0.32);
+      border-left: 5px solid var(--dl);
+      color: var(--ink);
+      text-shadow: none;
+      padding: 0.9rem 1.1rem;
+    }
+    .delta-note p { margin: 0; }
+    .delta-note strong { color: #8a0c20; }
 
     h2 {
       font-family: Palatino, "Palatino Linotype", "Iowan Old Style", Georgia, serif;
@@ -585,6 +595,9 @@
     </nav>
 
     <div id="flights" class="tab-panel" role="tabpanel" aria-labelledby="tab-flights">
+    <aside class="panel delta-note" aria-label="About Delta nonstop flights">
+      <p><strong>Yes, Delta flies ATL–RNO nonstop</strong> (DL391), but it leaves Atlanta at 7:59 PM and lands in Reno at 9:58 PM (about 1 AM Atlanta time), which is rough with kids. The fare pairs it with a connecting return through Salt Lake City, and it's pricey: <strong>$1,402 per person</strong> round trip vs. $695–$769 for the Southwest picks (prices checked Nov 25, about 10:45 AM ET).</p>
+    </aside>
     <section class="panel intro" aria-labelledby="overview">
       <h2 id="overview" style="color:var(--ink);text-shadow:none;margin-top:0;font-size:1.25rem;">The short version</h2>
       <div class="price-banner">
